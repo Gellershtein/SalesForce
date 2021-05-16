@@ -1,0 +1,23 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class HomePage extends BasePage {
+    public static final By TITLE_SALES = By.xpath("//*[@title='Sales']");
+
+    public HomePage(WebDriver driver) {
+        super(driver);
+    }
+
+
+    public HomePage open() {
+        driver.get(URL + "/lightning/page/home");
+        return this;
+    }
+
+    @Override
+    public boolean isPageOpen() {
+        return isExist(TITLE_SALES);
+    }
+}
