@@ -13,8 +13,8 @@ public class LoginTest extends BaseTest {
 //        loginPage.logIn(USER, PASSWORD);
         assertTrue(
                 loginPage
-                .logIn(USER, PASSWORD)
-                .isPageOpen(),
+                        .logIn(USER, PASSWORD)
+                        .isPageOpen(),
                 "Error: Login failed");
     }
 }

@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.HomePage;
 import pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
@@ -14,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
-//    HomePage homePage;
+    //    HomePage homePage;
     public static String USER = "sergei.zayats1992-clgs@force.com";
     public static String PASSWORD = "pswrd123";
 
