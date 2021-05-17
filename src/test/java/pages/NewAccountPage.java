@@ -20,13 +20,16 @@ public class NewAccountPage extends BasePage {
     Shipping Zip/Postal Code
     Shipping Country
      */
-
     String SEARCH_FIELD = "//*[@data-aura-class='forceDetailPanelDesktop']//span[text()='%s']//ancestor::label//following-sibling::div//child::input";
     /*
     Account Name
     Parent Account
     */
-
+    String DROPDOWN_FIELD = "//*[@data-aura-class='forceDetailPanelDesktop']//span[text()='%s']//ancestor::span//following-sibling::div//child::a";
+    /*
+    Type
+    Industry
+     */
     String TEXTAREA_FIELD = "//*[@data-aura-class='forceDetailPanelDesktop']//span[text()='%s']//ancestor::label//following-sibling::textarea";
     /*
     Description
