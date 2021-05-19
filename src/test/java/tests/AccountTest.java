@@ -3,9 +3,12 @@ package tests;
 import models.Account;
 import org.testng.annotations.Test;
 
+import java.util.Random;
+
 import static org.testng.Assert.assertTrue;
 
 public class AccountTest extends BaseTest {
+    Random random = new Random();
 
     @Test
     public void addNewAccount() {
@@ -20,9 +23,9 @@ public class AccountTest extends BaseTest {
         //FACTORY
         //BUILDER
         //RANDOM DATA
-        Account account = new Account("Test", "SZ", "+3454", "12345", "www.test.by",
-                "Analyst", "Banking", "10", "1,111", "Minsk", "Pushk",
-                "12345", "BY", "Minsk", "Partizansk", "12345", "By");
+        Account account = new Account("Test" + random.nextInt(1000), "SZ", "+3454", "12345", "www.test.by",
+                "Analyst", "Banking", "10", "1,111", "Test Account creation", "test billing street", "Minsk", "Frunz",
+                "12345", "BY", "test shipping street", "Minsk", "Partizansk", "12345", "By");
         accountsListPage
                 .open()
                 .clickNew()

@@ -2,6 +2,7 @@ package pages;
 
 import elements.DropDown;
 import elements.Input;
+import elements.TextArea;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -55,6 +56,9 @@ public class AccountModal extends BasePage {
         new Input(driver, "Shipping Country").write(account.getShippingCountry());
         new DropDown(driver, "Type").select("Analyst");
         new DropDown(driver, "Industry").select("Banking");
+        new TextArea(driver, "Description").write(account.getDescription());
+        new TextArea(driver, "Billing Street").write(account.getBillingStreet());
+        new TextArea(driver, "Shipping Street").write(account.getShippingStreet());
         save();
         return new AccountDetailsPage(driver);
     }

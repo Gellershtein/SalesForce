@@ -1,13 +1,14 @@
 package models;
 
 public class Account {
-    String accountName, parentAccount, phone, fax, website, type, industry, employees, annualRevenue, billingCity, billingState;
-    String billingPostalCode, billingCountry, shippingCity, shippingState, shippingPostalCode, shippingCountry;
+    String accountName, parentAccount, phone, fax, website, type, industry, employees, annualRevenue, description;
+    String billingStreet, billingCity, billingState, billingPostalCode, billingCountry;
+    String shippingStreet, shippingCity, shippingState, shippingPostalCode, shippingCountry;
 
     public Account(
             String accountName, String parentAccount, String phone, String fax, String website, String type, String industry,
-            String employees, String annualRevenue, String billingCity, String billingState, String billingPostalCode,
-            String billingCountry, String shippingCity, String shippingState, String shippingPostalCode, String shippingCountry) {
+            String employees, String annualRevenue, String description, String billingStreet, String billingCity, String billingState, String billingPostalCode,
+            String billingCountry, String shippingStreet, String shippingCity, String shippingState, String shippingPostalCode, String shippingCountry) {
         this.accountName = accountName;
         this.parentAccount = parentAccount;
         this.phone = phone;
@@ -17,10 +18,13 @@ public class Account {
         this.industry = industry;
         this.employees = employees;
         this.annualRevenue = annualRevenue;
+        this.description = description;
+        this.billingStreet = billingStreet;
         this.billingCity = billingCity;
         this.billingState = billingState;
         this.billingPostalCode = billingPostalCode;
         this.billingCountry = billingCountry;
+        this.shippingStreet = shippingStreet;
         this.shippingCity = shippingCity;
         this.shippingState = shippingState;
         this.shippingPostalCode = shippingPostalCode;
@@ -28,12 +32,45 @@ public class Account {
     }
 
     //GETTERS AND SETTERS
+
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
     public String getParentAccount() {
         return parentAccount;
     }
 
     public void setParentAccount(String parentAccount) {
         this.parentAccount = parentAccount;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getFax() {
+        return fax;
+    }
+
+    public void setFax(String fax) {
+        this.fax = fax;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
     }
 
     public String getType() {
@@ -68,6 +105,22 @@ public class Account {
         this.annualRevenue = annualRevenue;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getBillingStreet() {
+        return billingStreet;
+    }
+
+    public void setBillingStreet(String billingStreet) {
+        this.billingStreet = billingStreet;
+    }
+
     public String getBillingCity() {
         return billingCity;
     }
@@ -100,6 +153,14 @@ public class Account {
         this.billingCountry = billingCountry;
     }
 
+    public String getShippingStreet() {
+        return shippingStreet;
+    }
+
+    public void setShippingStreet(String shippingStreet) {
+        this.shippingStreet = shippingStreet;
+    }
+
     public String getShippingCity() {
         return shippingCity;
     }
@@ -130,37 +191,5 @@ public class Account {
 
     public void setShippingCountry(String shippingCountry) {
         this.shippingCountry = shippingCountry;
-    }
-
-    public String getAccountName() {
-        return accountName;
-    }
-
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
-    }
-
-    public String getFax() {
-        return fax;
-    }
-
-    public void setFax(String fax) {
-        this.fax = fax;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
     }
 }

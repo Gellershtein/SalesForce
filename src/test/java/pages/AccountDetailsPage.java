@@ -30,8 +30,8 @@ public class AccountDetailsPage extends BasePage {
         validateInput("Employees", account.getEmployees());
 //        validateInput("Annual Revenue", "$" + String.format("%,d", account.getAnnualRevenue()); // нужно как-то преобразовать вводимое значение к локали
         validateInput("Annual Revenue", "$" + account.getAnnualRevenue());
-        validateInput("Billing Address", String.format("%s, %s %s\n%s", account.getBillingCity(), account.getBillingState(), account.getBillingPostalCode(), account.getBillingCountry()));
-        validateInput("Shipping Address", String.format("%s, %s %s\n%s", account.getShippingCity(), account.getShippingState(), account.getShippingPostalCode(), account.getShippingCountry()));
+        validateInput("Billing Address", String.format("%s\n%s, %s %s\n%s", account.getBillingStreet(), account.getBillingCity(), account.getBillingState(), account.getBillingPostalCode(), account.getBillingCountry()));
+        validateInput("Shipping Address", String.format("%s\n%s, %s %s\n%s", account.getShippingStreet(), account.getShippingCity(), account.getShippingState(), account.getShippingPostalCode(), account.getShippingCountry()));
         validateInput("Type", account.getType());
         validateInput("Industry", account.getIndustry());
     }

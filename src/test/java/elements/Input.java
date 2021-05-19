@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Input {
+public class Input extends BaseElement {
     WebDriver driver;
     WebDriverWait wait;
     String inputFieldLabel;
-    String inputFieldLocator = "//*[contains(@class, 'modal-body')]//span[text()='%s']" +
-            "/ancestor::div[contains(@class, 'uiInput')]//input";
+    //    String inputFieldLocator = "//*[contains(@class, 'modal-body')]//span[text()='%s']" + "/ancestor::div[contains(@class, 'uiInput')]//input";
+    String inputFieldLocator = BaseInputElementLocator + "//input";
 
     public Input(WebDriver driver, String inputFieldLabel) {
         this.driver = driver;

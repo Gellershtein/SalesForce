@@ -4,17 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DropDown {
+public class DropDown extends BaseElement {
     WebDriver driver;
     WebDriverWait wait;
     String dropdownFieldLabel;
-    String dropdownLocator = "//*[contains(@class,'modal-body')]//span[text()='%s']" +
-            "/ancestor::div[contains(@class, 'uiInput')]//a";
+    //    String dropdownLocator = "//*[contains(@class,'modal-body')]//span[text()='%s']" + "/ancestor::div[contains(@class, 'uiInput')]//a";
+    String dropdownLocator = BaseInputElementLocator + "//a";
     String optionLocator = "//*[contains(@class,'uiMenuList') and contains(@class,'visible')]//a[@title='%s']";
 
-    public DropDown(WebDriver driver, String label) {
+    public DropDown(WebDriver driver, String dropdownFieldLabel) {
         this.driver = driver;
-        this.dropdownFieldLabel = label;
+        this.dropdownFieldLabel = dropdownFieldLabel;
     }
 
     public void select(String option) {
