@@ -17,7 +17,7 @@ public class HomePage extends BasePage {
     }
 
     @Override
-    public boolean isPageOpen() {
+    public boolean isPageOpened() {
         return isExist(TITLE_SALES);
     }
 }

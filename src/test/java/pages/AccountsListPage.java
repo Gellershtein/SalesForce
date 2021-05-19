@@ -20,12 +20,17 @@ public class AccountsListPage extends BasePage {
     }
 
     @Override
-    public boolean isPageOpen() {
+    public boolean isPageOpened() {
         return false;
     }
 
     public AccountsListPage open() {
         driver.get(URL + "/lightning/o/Account/list?filterName=Recent");
         return this;
+    }
+
+    public AccountModal clickNew() {
+        driver.findElement(NEW_BUTTON).click();
+        return new AccountModal(driver);
     }
 }

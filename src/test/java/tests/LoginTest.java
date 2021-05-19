@@ -9,12 +9,12 @@ public class LoginTest extends BaseTest {
     @Test
     public void successfulLogIn() {
         loginPage.open();
-        assertTrue(loginPage.isPageOpen(), "Error: Open Login page is failed");
+        assertTrue(loginPage.isPageOpened(), "Error: Open Login page is failed");
 //        loginPage.logIn(USER, PASSWORD);
         assertTrue(
                 loginPage
                         .logIn(USER, PASSWORD)
-                        .isPageOpen(),
+                        .isPageOpened(),
                 "Error: Login failed");
     }
 }
