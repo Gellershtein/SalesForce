@@ -13,7 +13,7 @@ public class Account {
         this.phone = phone;
         this.fax = fax;
         this.website = website;
-        this.type =  type;
+        this.type = type;
         this.industry = industry;
         this.employees = employees;
         this.annualRevenue = annualRevenue;

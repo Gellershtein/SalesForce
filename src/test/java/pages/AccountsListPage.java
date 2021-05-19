@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class AccountsListPage extends BasePage {
     public static final By NEW_BUTTON = By.xpath("//*[@title='New']");
-    By icon = By.cssSelector("img[title='Contacts']");
+    String icon = BaseLocator + "//img[@title='%s']";
     String SHOW_MORE_ACTIONS_BUTTON = "//span[text()='Show more actions']//ancestor::a";
     String ACTIONS_BUTTONS = "//*[@class='scrollable']//child::a[@title='%s']"; //after clicking SHOW_MORE_ACTIONS_BUTTON and wait for rendering
     /*
@@ -21,7 +21,7 @@ public class AccountsListPage extends BasePage {
 
     @Override
     public boolean isPageOpened() {
-        return false;
+        return isExist(By.xpath(String.format(icon, "Account")));
     }
 
     public AccountsListPage open() {

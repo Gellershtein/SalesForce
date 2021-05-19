@@ -11,6 +11,7 @@ public abstract class BasePage {
     WebDriver driver;
     WebDriverWait wait;
     public static String URL = "https://profitero2.lightning.force.com";
+    public static String BaseLocator = "//div[contains(@class,'active')]";
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -29,19 +30,20 @@ public abstract class BasePage {
         }
     }
 
-    public void validateInput(String label,String expected) {
-        String textLocator = "//div[contains(@class,'active')]//span[text()='%s']/ancestor::force-record-layout-item//*[@data-output-element-id='output-field']";
-        String addressLocator = "//div[contains(@class,'active')]//span[text()='%s']/ancestor::force-record-layout-item//*[@data-output-element-id='output-field']/a";
-        if (!label.contains("Address")){
-        assertEquals(
-                driver.findElement(By.xpath(String.format(textLocator, label))).getText(),
-                expected,
-                "Input text is not correct" );
+    public void validateInput(String label, String expected) {
+        String fieldLocator = "//span[text()='%s']/ancestor::force-record-layout-item//*[@data-output-element-id='output-field']";
+        String textLocator = BaseLocator + fieldLocator;
+        String addressLocator = BaseLocator + fieldLocator + "/a";
+        if (!label.contains("Address")) {
+            assertEquals(
+                    driver.findElement(By.xpath(String.format(textLocator, label))).getText(),
+                    expected,
+                    "Input text is not correct");
         } else {
             assertEquals(
                     driver.findElement(By.xpath(String.format(addressLocator, label))).getText(),
                     expected,
-                    "Input text is not correct" );
+                    "Input text is not correct");
         }
     }
 }

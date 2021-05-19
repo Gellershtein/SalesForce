@@ -17,17 +17,18 @@ public class AccountTest extends BaseTest {
                 .logIn(USER, PASSWORD)
                 .isPageOpened();
         assertTrue(isOpened, "Page didn't opened");
-       //FACTORY
-       //BUILDER
-       //RANDOM DATA
-        Account account = new Account("Test", "SZ", "+3454", "12345","www.test.by",
-                "Analyst", "Banking", "10","1111","Minsk", "Pushk",
-                "12345", "BY", "Minsk", "Partizansk","12345","By");
+        //FACTORY
+        //BUILDER
+        //RANDOM DATA
+        Account account = new Account("Test", "SZ", "+3454", "12345", "www.test.by",
+                "Analyst", "Banking", "10", "1,111", "Minsk", "Pushk",
+                "12345", "BY", "Minsk", "Partizansk", "12345", "By");
         accountsListPage
                 .open()
                 .clickNew()
                 .create(account)
                 .openDetailsTab()
+//                .isPageOpened()
                 .validateAccount(account);
     }
 }
