@@ -1,15 +1,13 @@
 package pages;
 
-import elements.DropDown;
-import elements.Input;
-import elements.TextArea;
+import elements.AccountsPage.DropDown;
+import elements.AccountsPage.Input;
+import elements.AccountsPage.TextArea;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class AccountModal extends BasePage {
-    public static final By SAVE_BUTTON = By.xpath("//*[@title='Save']");
-    String modalTitle = "//h2[text()='%s']";
+public class AccountModal extends BaseModal {
     String SEARCH_FIELD = "//*[@data-aura-class='forceDetailPanelDesktop']//span[text()='%s']//ancestor::label//following-sibling::div//child::input";
     /*
     Account Name

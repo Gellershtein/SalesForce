@@ -1,5 +1,6 @@
-package elements;
+package elements.AccountsPage;
 
+import elements.BaseElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -7,9 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class TextArea extends BaseElement {
     WebDriver driver;
     WebDriverWait wait;
+    //Account Page
     String textAreaFieldLabel;
     //    String textAreaFieldLocator = "//*[contains(@class, 'modal-body')]//span[text()='%s']" + "/ancestor::div[contains(@class, 'uiInput')]//textarea";
-    String textAreaFieldLocator = BaseInputElementLocator + "//textarea";
+    String textAreaFieldLocator = BaseAccountPageInputElementLocator + "//textarea";
+    //Contacts Page
 
     public TextArea(WebDriver driver, String textAreaFieldLabel) {
         this.driver = driver;

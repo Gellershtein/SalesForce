@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AccountsListPage extends BasePage {
-    public static final By NEW_BUTTON = By.xpath("//*[@title='New']");
-    String icon = BaseLocator + "//img[@title='%s']";
     String SHOW_MORE_ACTIONS_BUTTON = "//span[text()='Show more actions']//ancestor::a";
     String ACTIONS_BUTTONS = "//*[@class='scrollable']//child::a[@title='%s']"; //after clicking SHOW_MORE_ACTIONS_BUTTON and wait for rendering
     /*

@@ -1,5 +1,6 @@
-package elements;
+package elements.AccountsPage;
 
+import elements.BaseElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -9,7 +10,7 @@ public class DropDown extends BaseElement {
     WebDriverWait wait;
     String dropdownFieldLabel;
     //    String dropdownLocator = "//*[contains(@class,'modal-body')]//span[text()='%s']" + "/ancestor::div[contains(@class, 'uiInput')]//a";
-    String dropdownLocator = BaseInputElementLocator + "//a";
+    String dropdownLocator = BaseAccountPageInputElementLocator + "//a";
     String optionLocator = "//*[contains(@class,'uiMenuList') and contains(@class,'visible')]//a[@title='%s']";
 
     public DropDown(WebDriver driver, String dropdownFieldLabel) {

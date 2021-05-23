@@ -2,6 +2,7 @@ package tests;
 
 import models.Account;
 import org.testng.annotations.Test;
+import tests.base.BaseTest;
 
 import java.util.Random;
 
@@ -10,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 public class AccountTest extends BaseTest {
     Random random = new Random();
 
-    @Test
+    @Test(description = "Test for Adding new Account")
     public void addNewAccount() {
         boolean isOpened = loginPage
                 .open()

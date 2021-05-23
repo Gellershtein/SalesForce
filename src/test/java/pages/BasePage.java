@@ -12,6 +12,8 @@ public abstract class BasePage {
     WebDriverWait wait;
     public static String URL = "https://profitero2.lightning.force.com";
     public static String BaseLocator = "//div[contains(@class,'active')]";
+    public static final By NEW_BUTTON = By.xpath("//*[@title='New']");
+    String icon = BaseLocator + "//img[@title='%s']";
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -33,7 +35,7 @@ public abstract class BasePage {
     public void validateInput(String label, String expected) {
         String fieldLocator = "//span[text()='%s']/ancestor::force-record-layout-item//*[@data-output-element-id='output-field']";
         String textLocator = BaseLocator + fieldLocator;
-        String addressLocator = BaseLocator + fieldLocator + "/a";
+        String addressLocator = textLocator + "/a";
         if (!label.contains("Address")) {
             assertEquals(
                     driver.findElement(By.xpath(String.format(textLocator, label))).getText(),
