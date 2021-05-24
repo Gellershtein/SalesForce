@@ -1,4 +1,4 @@
-package elements.AccountsPage;
+package elements.accountsPage;
 
 import elements.BaseElement;
 import org.openqa.selenium.By;

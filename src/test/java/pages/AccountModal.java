@@ -1,8 +1,8 @@
 package pages;
 
-import elements.AccountsPage.DropDown;
-import elements.AccountsPage.Input;
-import elements.AccountsPage.TextArea;
+import elements.accountsPage.DropDown;
+import elements.accountsPage.Input;
+import elements.accountsPage.TextArea;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

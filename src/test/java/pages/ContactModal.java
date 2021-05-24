@@ -1,9 +1,9 @@
 package pages;
 
-import elements.ContactsPage.DropDown;
-import elements.ContactsPage.Input;
-import elements.ContactsPage.Search;
-import elements.ContactsPage.TextArea;
+import elements.contactsPage.DropDown;
+import elements.contactsPage.Input;
+import elements.contactsPage.Search;
+import elements.contactsPage.TextArea;
 import models.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

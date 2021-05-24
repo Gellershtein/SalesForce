@@ -1,4 +1,4 @@
-package elements.ContactsPage;
+package elements.contactsPage;
 
 import elements.BaseElement;
 import org.openqa.selenium.By;
