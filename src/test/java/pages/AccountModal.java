@@ -6,6 +6,7 @@ import elements.accountsPage.TextArea;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AccountModal extends BaseModal {
     String SEARCH_FIELD = "//*[@data-aura-class='forceDetailPanelDesktop']//span[text()='%s']//ancestor::label//following-sibling::div//child::input";
@@ -42,26 +43,27 @@ public class AccountModal extends BaseModal {
         new Input(driver, "Phone").write(account.getPhone());
         new Input(driver, "Fax").write(account.getFax());
         new Input(driver, "Website").write(account.getWebsite());
+        new DropDown(driver, "Type").select("Analyst");
+        new DropDown(driver, "Industry").select("Banking");
         new Input(driver, "Employees").write(account.getEmployees());
         new Input(driver, "Annual Revenue").write(account.getAnnualRevenue());
+        new TextArea(driver, "Description").write(account.getDescription());
+        new TextArea(driver, "Billing Street").write(account.getBillingStreet());
         new Input(driver, "Billing City").write(account.getBillingCity());
         new Input(driver, "Billing State/Province").write(account.getBillingState());
         new Input(driver, "Billing Zip/Postal Code").write(account.getBillingPostalCode());
         new Input(driver, "Billing Country").write(account.getBillingCountry());
+        new TextArea(driver, "Shipping Street").write(account.getShippingStreet());
         new Input(driver, "Shipping City").write(account.getShippingCity());
         new Input(driver, "Shipping State/Province").write(account.getShippingState());
         new Input(driver, "Shipping Zip/Postal Code").write(account.getShippingPostalCode());
         new Input(driver, "Shipping Country").write(account.getShippingCountry());
-        new DropDown(driver, "Type").select("Analyst");
-        new DropDown(driver, "Industry").select("Banking");
-        new TextArea(driver, "Description").write(account.getDescription());
-        new TextArea(driver, "Billing Street").write(account.getBillingStreet());
-        new TextArea(driver, "Shipping Street").write(account.getShippingStreet());
         save();
         return new AccountDetailsPage(driver);
     }
 
     public void save() {
+        new WebDriverWait(driver, 30);
         driver.findElement(SAVE_BUTTON).click();
     }
 }

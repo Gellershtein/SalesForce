@@ -47,7 +47,7 @@ public class ContactModal extends BaseModal {
         new Input(driver, "Assistant").write(contact.getAssistant());
         new Input(driver, "Department").write(contact.getDepartment());
         new DropDown(driver, "Lead Source").select(contact.getLeadSource());
-        new Input(driver, "Birthdate").write(contact.getBirthdate());
+//        new Input(driver, "Birthdate").write(contact.getBirthdate());
         new TextArea(driver, "Description").write(contact.getDescriptionInfo());
         save();
         return new ContactDetailsPage(driver);

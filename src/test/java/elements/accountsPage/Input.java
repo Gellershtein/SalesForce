@@ -3,6 +3,7 @@ package elements.accountsPage;
 import elements.BaseElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Input extends BaseElement {
@@ -22,6 +23,8 @@ public class Input extends BaseElement {
         System.out.println(String.format("Writing text '%s' into input with label %s", inputText, inputFieldLabel));
         //TO DO
         //JS SET STYLE TO HIGHLIGHT FIELD
-        driver.findElement(By.xpath(String.format(inputFieldLocator, inputFieldLabel))).sendKeys(inputText);
+        WebElement element = driver.findElement(By.xpath(String.format(inputFieldLocator, inputFieldLabel)));
+        highlightElement(driver, element);
+        element.sendKeys(inputText);
     }
 }

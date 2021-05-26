@@ -41,6 +41,6 @@ public class ContactDetailsPage extends BasePage {
         validateInput("Description", contact.getDescriptionInfo());
         validateInput("Department", contact.getDepartment());
         validateInput("Lead Source", contact.getLeadSource());
-        validateInput("Birthdate", contact.getBirthdate());
+//        validateInput("Birthdate", contact.getBirthdate());
     }
 }

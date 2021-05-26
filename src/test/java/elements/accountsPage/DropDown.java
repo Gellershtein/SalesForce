@@ -3,6 +3,7 @@ package elements.accountsPage;
 import elements.BaseElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DropDown extends BaseElement {
@@ -19,8 +20,12 @@ public class DropDown extends BaseElement {
     }
 
     public void select(String option) {
-        driver.findElement(By.xpath(String.format(dropdownLocator, dropdownFieldLabel))).click();
+        WebElement element = driver.findElement(By.xpath(String.format(dropdownLocator, dropdownFieldLabel)));
+        highlightElement(driver, element);
+        element.click();
         System.out.println(String.format("Select option '%s' into dropdown with label %s", option, dropdownFieldLabel));
-        driver.findElement(By.xpath(String.format(optionLocator, option))).click();
+        element = driver.findElement(By.xpath(String.format(optionLocator, option)));
+        highlightElement(driver, element);
+        element.click();
     }
 }
