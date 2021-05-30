@@ -12,7 +12,7 @@ public class ContactTest extends BaseTest {
     Random random = new Random();
 
     @Test(description = "Test for Adding new Contact")
-    public void addNewContact() {
+    public void createNewContact() {
         boolean isOpened = loginPage
                 .open()
                 .isPageOpened();

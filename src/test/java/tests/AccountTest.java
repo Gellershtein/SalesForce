@@ -12,7 +12,7 @@ public class AccountTest extends BaseTest {
     Random random = new Random();
 
     @Test(description = "Test for Adding new Account")
-    public void addNewAccount() {
+    public void createNewAccount() {
         boolean isOpened = loginPage
                 .open()
                 .isPageOpened();

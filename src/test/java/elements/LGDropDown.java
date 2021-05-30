@@ -1,19 +1,19 @@
-package elements.contactsPage;
+package elements;
 
-import elements.BaseElement;
+import elements.base.BaseElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DropDown extends BaseElement {
+public class LGDropDown extends BaseElement {
     WebDriver driver;
     WebDriverWait wait;
     String dropdownFieldLabel;
-    String dropdownLocator = BaseContactsPageInputElementLocator + "input";
+    String dropdownLocator = BaseLightningInputElementLocator + "input";
     String optionLocator = "//input[@aria-expanded='true']//ancestor::div[contains(@class,'slds-is-open')]//span[text()='%s']";
 
-    public DropDown(WebDriver driver, String dropdownFieldLabel) {
+    public LGDropDown(WebDriver driver, String dropdownFieldLabel) {
         this.driver = driver;
         this.dropdownFieldLabel = dropdownFieldLabel;
     }

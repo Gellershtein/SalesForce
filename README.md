@@ -1,28 +1,58 @@
-#Test Automation Framework for https://profitero2.my.salesforce.com/
-#TECHNOLOGIES
+# Test Automation Framework for https://profitero4.my.salesforce.com/
+
+---------------------
+
+# TECHNOLOGIES
+
+---------------------
+
 - Java 14
 - Selenium
 - Maven
 - TestNG
 
-#PRE-CONDITIONS TO RUN TESTS
+# PRE-CONDITIONS TO RUN TESTS
+
+---------------------
+
 - Java 14
 - Maven
 - TestNG
 - Chrome browser
 
+# Checklist for SalesForce
 
+---------------------
 
+### **Login**
 
+- Check Field UserName
+- Check Field Password
+
+### **Accounts Page**
+
+- Create new account and validate it on Details page
+
+### **Contacts Page**
+
+- Create new contact and validate it on Details page
+
+### **Lead Page**
+
+- Create new lead and validate it on Details page
+
+---------------------
 
 ### MAVEN
+
+---------------------
+
 ##### Обновить версии всех библиотек в проекте и ее вывод, например
 
 - `mvn versions:display-dependency-updates`команда для просмотра доступных обновлений библиотек
 
 - `mvn versions:use-latest-versions` команда для автоматического обновления всех версий
 
-  
 `mvn versions:display-dependency-updates` command result:
 
 [INFO] --- versions-maven-plugin:2.8.1:display-dependency-updates (default-cli) @ SalesForce ---
@@ -49,6 +79,7 @@
 [INFO] ------------------------------------------------------------------------
 
 ### SEND PROPERTIES TO LOGIN TEST
+
 `mvn -Dtest=PRLoginTest test -DUSER="sergei.zayats1992-clgs@force.com" -DPASSWORD="pswrd123"`
 
 [INFO] Results:

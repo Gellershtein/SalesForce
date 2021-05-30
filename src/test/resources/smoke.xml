@@ -5,9 +5,9 @@
         <listener class-name="tests.base.AnnotationTransformer"></listener>
     </listeners>
     <test name="test 1">
-<!--  <parameter name="browser" value="chrome"></parameter> -->
-     <classes>
-         <class name="tests.LoginTest"/>
-     </classes>
- </test> <!-- Test -->
+        <!--  <parameter name="browser" value="chrome"></parameter> -->
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test> <!-- Test -->
 </suite>

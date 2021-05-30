@@ -5,16 +5,17 @@
         <listener class-name="tests.base.AnnotationTransformer"></listener>
     </listeners>
     <test name="test 1">
-<!--  <parameter name="browser" value="chrome"></parameter> -->
-     <classes>
-         <class name="tests.AccountTest"/>
-         <class name="tests.LoginTest"/>
-     </classes>
- </test> <!-- Test -->
+        <!--  <parameter name="browser" value="chrome"></parameter> -->
+        <classes>
+            <class name="tests.AccountTest"/>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test> <!-- Test -->
     <test name="test 2">
-<!-- <parameter name="browser" value="firefox"></parameter> -->
+        <!-- <parameter name="browser" value="firefox"></parameter> -->
         <classes>
             <class name="tests.ContactTest"/>
+            <class name="tests.LeadTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>

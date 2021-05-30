@@ -1,12 +1,13 @@
 package pages;
 
+import io.qameta.allure.Step;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.base.BaseDetailsPage;
 
-public class AccountDetailsPage extends BasePage {
-    public static final By DETAILS_TAB = By.xpath(BaseLocator + "//*[@id='detailTab__item']");
-    String icon = BaseLocator + "//img[@title='%s']";
+public class AccountDetailsPage extends BaseDetailsPage {
+
 
     public AccountDetailsPage(WebDriver driver) {
         super(driver);
@@ -17,11 +18,13 @@ public class AccountDetailsPage extends BasePage {
         return isExist(By.xpath(String.format(icon, "Account")));
     }
 
+    @Step("Open details tab on Accounts page")
     public AccountDetailsPage openDetailsTab() {
         driver.findElement(DETAILS_TAB).click();
         return this;
     }
 
+    @Step("Validating new Account from Details page")
     public void validateAccount(Account account) {
         validateInput("Account Name", account.getAccountName());
         validateInput("Phone", account.getPhone());

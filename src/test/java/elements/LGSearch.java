@@ -1,19 +1,19 @@
-package elements.contactsPage;
+package elements;
 
-import elements.BaseElement;
+import elements.base.BaseElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Search extends BaseElement {
+public class LGSearch extends BaseElement {
     WebDriver driver;
     WebDriverWait wait;
     String searchFieldLabel;
-    String searchLocator = BaseContactsPageInputElementLocator + "input";
+    String searchLocator = BaseLightningInputElementLocator + "input";
     String searchResultLocator = "//input[@aria-expanded='true']//ancestor::div[contains(@class,'slds-is-open')]//strong[text()='%s']";
 
-    public Search(WebDriver driver, String searchFieldLabel) {
+    public LGSearch(WebDriver driver, String searchFieldLabel) {
         this.driver = driver;
         this.searchFieldLabel = searchFieldLabel;
     }
