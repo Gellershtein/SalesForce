@@ -1,20 +1,20 @@
-package elements.contactsPage;
+package elements;
 
-import elements.BaseElement;
+import elements.base.BaseElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TextArea extends BaseElement {
+public class LGTextArea extends BaseElement {
     WebDriver driver;
     WebDriverWait wait;
     String textAreaFieldLabel;
-    String textAreaFieldLocator = BaseContactsPageInputElementLocator + "textarea";
+    String textAreaFieldLocator = BaseLightningInputElementLocator + "textarea";
     //*[contains(@class, 'modal-body')]//label[text()='Mailing Street']/ancestor::slot[@slot='inputField']//textarea
 
 
-    public TextArea(WebDriver driver, String textAreaFieldLabel) {
+    public LGTextArea(WebDriver driver, String textAreaFieldLabel) {
         this.driver = driver;
         this.textAreaFieldLabel = textAreaFieldLabel;
     }

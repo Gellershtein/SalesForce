@@ -1,17 +1,11 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.base.BasePage;
 
 public class AccountsListPage extends BasePage {
-    String SHOW_MORE_ACTIONS_BUTTON = "//span[text()='Show more actions']//ancestor::a";
-    String ACTIONS_BUTTONS = "//*[@class='scrollable']//child::a[@title='%s']"; //after clicking SHOW_MORE_ACTIONS_BUTTON and wait for rendering
-    /*
-    Edit
-    Delete
-    Change Owner
-     */
-    String SEARCH_FIELD = "//*[@placeholder='Search this list...']";
 
     public AccountsListPage(WebDriver driver) {
         super(driver);
@@ -22,11 +16,13 @@ public class AccountsListPage extends BasePage {
         return isExist(By.xpath(String.format(icon, "Account")));
     }
 
+    @Step("Open Accounts page")
     public AccountsListPage open() {
         driver.get(URL + "/lightning/o/Account/list");
         return this;
     }
 
+    @Step("Click NEW button on Accounts page")
     public AccountModal clickNew() {
         driver.findElement(NEW_BUTTON).click();
         return new AccountModal(driver);

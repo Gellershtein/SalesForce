@@ -1,19 +1,19 @@
-package pages;
+package pages.base;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.testng.Assert.assertEquals;
 
 public abstract class BasePage {
-    WebDriver driver;
-    WebDriverWait wait;
-    public static String URL = "https://profitero2.lightning.force.com";
+    protected WebDriver driver;
+    protected WebDriverWait wait;
+    public static String URL = "https://profitero4.my.salesforce.com/";
     public static String BaseLocator = "//div[contains(@class,'active')]";
     public static final By NEW_BUTTON = By.xpath("//*[@title='New']");
-    String icon = BaseLocator + "//img[@title='%s']";
+    protected String icon = BaseLocator + "//img[@title='%s']";
+    public static final By DETAILS_TAB = By.xpath(BaseLocator + "//*[@id='detailTab__item']");
+
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -37,15 +37,24 @@ public abstract class BasePage {
         String textLocator = BaseLocator + fieldLocator;
         String addressLocator = textLocator + "/a";
         if (!label.contains("Address")) {
+            WebElement element = driver.findElement(By.xpath(String.format(textLocator, label)));
+            highlightElement(driver, element);
             assertEquals(
-                    driver.findElement(By.xpath(String.format(textLocator, label))).getText(),
+                    element.getText(),
                     expected,
-                    "Input text is not correct");
+                    String.format("Input text for %s is not correct", label));
         } else {
+            WebElement element = driver.findElement(By.xpath(String.format(addressLocator, label)));
+            highlightElement(driver, element);
             assertEquals(
-                    driver.findElement(By.xpath(String.format(addressLocator, label))).getText(),
+                    element.getText(),
                     expected,
-                    "Input text is not correct");
+                    String.format("Input text for %s is not correct", label));
         }
+    }
+
+    public void highlightElement(WebDriver driver, WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('style', 'background: #3cff3c; border: 2px solid red;');", element);
     }
 }
