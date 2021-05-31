@@ -17,7 +17,6 @@
 
 - Java 14
 - Maven
-- TestNG
 - Chrome browser
 
 # Checklist for SalesForce

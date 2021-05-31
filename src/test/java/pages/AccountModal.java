@@ -7,7 +7,6 @@ import io.qameta.allure.Step;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.base.BaseModal;
 
 public class AccountModal extends BaseModal {
@@ -46,8 +45,8 @@ public class AccountModal extends BaseModal {
         new SFInput(driver, "Phone").write(account.getPhone());
         new SFInput(driver, "Fax").write(account.getFax());
         new SFInput(driver, "Website").write(account.getWebsite());
-        new SFDropDown(driver, "Type").select("Analyst");
-        new SFDropDown(driver, "Industry").select("Banking");
+        new SFDropDown(driver, "Type").select(account.getType());
+        new SFDropDown(driver, "Industry").select(account.getIndustry());
         new SFInput(driver, "Employees").write(account.getEmployees());
         new SFInput(driver, "Annual Revenue").write(account.getAnnualRevenue());
         new SFTextArea(driver, "Description").write(account.getDescription());
@@ -66,7 +65,6 @@ public class AccountModal extends BaseModal {
     }
 
     public void save() {
-        new WebDriverWait(driver, 30);
         driver.findElement(SAVE_BUTTON).click();
     }
 }
