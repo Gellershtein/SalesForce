@@ -1,11 +1,13 @@
 package pages;
 
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import models.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.base.BaseDetailsPage;
 
+@Log4j2
 public class ContactDetailsPage extends BaseDetailsPage {
 
 
@@ -20,12 +22,14 @@ public class ContactDetailsPage extends BaseDetailsPage {
 
     @Step("Open details tab on Contacts page")
     public ContactDetailsPage openDetailsTab() {
+        log.info("Opened the details tab on the Contacts page");
         driver.findElement(DETAILS_TAB).click();
         return this;
     }
 
     @Step("Validating new Contact from Details page")
     public void validateContact(Contact contact) {
+        log.info(String.format("Started validation new Contact: %s from the Details page", contact.getAccountName()));
         validateInput("Name", String.format("%s %s %s", contact.getSalutation(), contact.getFirstName(), contact.getLastName()));
         validateInput("Account Name", String.format("%s\nOpen %s Preview", contact.getAccountName(), contact.getAccountName()));
         validateInput("Title", contact.getTitle());

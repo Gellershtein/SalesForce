@@ -1,6 +1,7 @@
 package tests;
 
 import models.Contact;
+import models.ContactFactory;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
@@ -21,11 +22,7 @@ public class ContactTest extends BaseTest {
                 .logIn(USER, PASSWORD)
                 .isPageOpened();
         assertTrue(isOpened, "Page didn't opened");
-        Contact contact = new Contact("Prof.", "Ilon", "Mask", "TestAccount", "Scammer",
-                "+33123", "+2133", "ilon@scammer.com", "Boss", "test malling street", "Minsk",
-                "Frunz", "12345", "BY", "test other street", "Minsk", "Partizansk",
-                "12345", "By", "333", "Trading", "9379992", "Word of mouth", "666",
-                "5/1/1941", "777", "chio", "Dogefather");
+        Contact contact = ContactFactory.get();
         contactsPage
                 .open()
                 .clickNew()
