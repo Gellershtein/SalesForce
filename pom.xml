@@ -18,7 +18,8 @@
         <aspectj.version>1.9.6</aspectj.version>
         <allure.version>2.13.9</allure.version>
         <allure-maven.version>2.10.0</allure-maven.version>
-        <suiteXmlFile>src/test/resources/smoke.xml</suiteXmlFile>
+        <suiteXmlFile>src/test/resources/testsuite.xml</suiteXmlFile>
+        testsuite.xml
         <test.param>${USER}</test.param>
         <test.param>${PASSWORD}</test.param>
     </properties>
