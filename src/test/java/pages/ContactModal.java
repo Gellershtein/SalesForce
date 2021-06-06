@@ -52,7 +52,7 @@ public class ContactModal extends BaseModal {
         new LGInput(driver, "Asst. Phone").write(contact.getAsstPhone());
         new LGInput(driver, "Assistant").write(contact.getAssistant());
         new LGInput(driver, "Department").write(contact.getDepartment());
-        new LGDropDown(driver, "Lead Source").select(contact.getLeadSource());
+//        new LGDropDown(driver, "Lead Source").select(contact.getLeadSource());
         new LGInput(driver, "Birthdate").write(contact.getBirthdate());
         new LGTextArea(driver, "Description").write(contact.getDescriptionInfo());
         save();
