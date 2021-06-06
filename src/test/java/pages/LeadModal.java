@@ -4,11 +4,13 @@ import elements.LGDropDown;
 import elements.LGInput;
 import elements.LGTextArea;
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import models.Lead;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.base.BaseModal;
 
+@Log4j2
 public class LeadModal extends BaseModal {
 
     public LeadModal(WebDriver driver) {
@@ -23,6 +25,7 @@ public class LeadModal extends BaseModal {
 
     @Step("Fill in form for new Lead")
     public LeadDetailsPage create(Lead lead) {
+        log.info("Filling in form for new Lead");
         new LGDropDown(driver, "Salutation").select(lead.getSalutation());
         new LGInput(driver, "First Name").write(lead.getFirstName());
         new LGInput(driver, "Last Name").write(lead.getLastName());

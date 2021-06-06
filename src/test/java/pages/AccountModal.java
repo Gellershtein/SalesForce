@@ -4,11 +4,13 @@ import elements.SFDropDown;
 import elements.SFInput;
 import elements.SFTextArea;
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.base.BaseModal;
 
+@Log4j2
 public class AccountModal extends BaseModal {
     String SEARCH_FIELD = "//*[@data-aura-class='forceDetailPanelDesktop']//span[text()='%s']//ancestor::label//following-sibling::div//child::input";
     /*
@@ -40,6 +42,7 @@ public class AccountModal extends BaseModal {
     //ATLAS//JDI
     @Step("Fill in form for new Account")
     public AccountDetailsPage create(Account account) {
+        log.info("Filling in form for new Account");
         new SFInput(driver, "Account Name").write(account.getAccountName());
         new SFInput(driver, "Parent Account").write(account.getParentAccount());
         new SFInput(driver, "Phone").write(account.getPhone());
