@@ -5,6 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.base.BaseDetailsPage;
 
 @Log4j2
@@ -23,6 +24,7 @@ public class AccountDetailsPage extends BaseDetailsPage {
     @Step("Open details tab on Accounts page")
     public AccountDetailsPage openDetailsTab() {
         log.info("Opened the details tab on the Accounts page");
+        wait = new WebDriverWait(driver, 20);
         driver.findElement(DETAILS_TAB).click();
         return this;
     }
