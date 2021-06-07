@@ -2,6 +2,7 @@ package tests;
 
 import models.Contact;
 import models.ContactFactory;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
@@ -12,6 +13,7 @@ import static org.testng.Assert.assertTrue;
 public class ContactTest extends BaseTest {
     Random random = new Random();
 
+    @Ignore
     @Test(description = "Test for Adding new Contact")
     public void createNewContact() {
         boolean isOpened = loginPage
