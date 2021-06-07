@@ -28,7 +28,7 @@ public class ContactFactory {
                 .fax(faker.phoneNumber().phoneNumber())
                 .department("Trading")
                 .homePhone(faker.phoneNumber().phoneNumber())
-                .leadSource("Word of mouth")
+                .leadSource("Advertisement")
                 .otherPhone(faker.phoneNumber().phoneNumber())
                 .birthdate("5/1/1941")
                 .asstPhone(faker.phoneNumber().phoneNumber())
