@@ -1,11 +1,13 @@
 package elements;
 
 import elements.base.BaseElement;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+@Log4j2
 public class LGTextArea extends BaseElement {
     WebDriver driver;
     WebDriverWait wait;
@@ -20,7 +22,7 @@ public class LGTextArea extends BaseElement {
     }
 
     public void write(String inputText) {
-        System.out.println(String.format("Writing text '%s' into textarea with label %s", inputText, textAreaFieldLabel));
+        log.info(String.format("Writing text '%s' into textarea with label %s", inputText, textAreaFieldLabel));
         //TO DO
         //JS SET STYLE TO HIGHLIGHT FIELD
         WebElement element = driver.findElement(By.xpath(String.format(textAreaFieldLocator, textAreaFieldLabel)));

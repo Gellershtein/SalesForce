@@ -31,7 +31,7 @@ public class LoginPage extends BasePage {
 
     @Step("Fill in Login form")
     public HomePage logIn(String user, String password) {
-        log.info("Filling in Login");
+        log.info("Filling data in Login");
         driver.findElement(USERNAME_INPUT).sendKeys(user);
         driver.findElement(PASSWORD).sendKeys(password);
         driver.findElement(LOGIN_BUTTON).click();
