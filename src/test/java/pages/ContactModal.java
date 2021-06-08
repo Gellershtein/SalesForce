@@ -5,11 +5,13 @@ import elements.LGInput;
 import elements.LGSearch;
 import elements.LGTextArea;
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import models.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.base.BaseModal;
 
+@Log4j2
 public class ContactModal extends BaseModal {
 
     public ContactModal(WebDriver driver) {
@@ -24,6 +26,7 @@ public class ContactModal extends BaseModal {
     //ATLAS//JDI
     @Step("Fill in form for new Contact")
     public ContactDetailsPage create(Contact contact) {
+        log.info("Filling in form for new Contact");
         new LGDropDown(driver, "Salutation").select(contact.getSalutation());
         new LGInput(driver, "First Name").write(contact.getFirstName());
         new LGInput(driver, "Last Name").write(contact.getLastName());

@@ -1,11 +1,13 @@
 package tests.base;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import utils.AllureUtils;
 
+@Log4j2
 public class TestListener implements ITestListener {
 
     //TODO: implement create test run using API(add test cases too)
